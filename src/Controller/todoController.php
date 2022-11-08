@@ -32,4 +32,16 @@ class todoController extends AbstractController
             'tasks' => $tasks,
         ]);
     }
+
+    #[Route('/create', name:'create_task', methods:'POST')]
+    public function create()
+    {
+       exit ('to do: create a new task...');
+    }
+
+    #[Route('/delete/{id}', name:'delete_task')]
+    public function delete($id)
+    {
+       exit ('to do: delete a task...'. $id);
+    }
 }
