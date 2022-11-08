@@ -28,7 +28,7 @@ class todoController extends AbstractController
         $tasks = $todoDbRepository->findAll();
 
         //render and pass data to the page
-        return $this->render('todoapp/todoapp.html.twig', [
+        return $this->render('todoapp.html.twig', [
             'tasks' => $tasks,
         ]);
     }

@@ -1,15 +1,8 @@
-<link href="{{ asset('css/todoapp.css') }}" rel="stylesheet"/>
+{%extends 'base.html.twig' %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>test_app_todo</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="style.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class="heading">
+{% block content %}
+
+    <div class="heading">
             <h2>To-Do List</h2>
         </div>
         <form method="POST" action="index.php">
@@ -41,5 +34,4 @@
 
         </table>
 
-    </body>
-</html>
+{% endblock %}
