@@ -19,17 +19,17 @@
                     <th>Delete</th>
                 </tr>
             </thead>
-        
+            {% for tsk in tasks %}
             <tbody>
                 <tr>
-                    <td></td>
-                    <td class="task"></td>
+                    <td>{{ tsk.id }}</td>
+                    <td class="task">{{ tsk.task }}</td>
                     <td class="delete">
-                        <a href={{path('delete_task', {'id':1})}}></a>
+                        <a href={{path('delete_task', {'id':tsk.id})}}>X</a>
                 </td>
             </tr> 
             </tbody>
-
+            {% endfor %}
         </table>
 
 {% endblock %}

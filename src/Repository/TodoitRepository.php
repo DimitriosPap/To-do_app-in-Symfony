@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\TodoDb;
+use App\Entity\Todoit;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<TodoDb>
+ * @extends ServiceEntityRepository<Todoit>
  *
- * @method TodoDb|null find($id, $lockMode = null, $lockVersion = null)
- * @method TodoDb|null findOneBy(array $criteria, array $orderBy = null)
- * @method TodoDb[]    findAll()
- * @method TodoDb[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Todoit|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Todoit|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Todoit[]    findAll()
+ * @method Todoit[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TodoDbRepository extends ServiceEntityRepository
+class TodoitRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, TodoDb::class);
+        parent::__construct($registry, Todoit::class);
     }
 
-    public function save(TodoDb $entity, bool $flush = false): void
+    public function save(Todoit $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class TodoDbRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(TodoDb $entity, bool $flush = false): void
+    public function remove(Todoit $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class TodoDbRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return TodoDb[] Returns an array of TodoDb objects
+//     * @return Todoit[] Returns an array of Todoit objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class TodoDbRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?TodoDb
+//    public function findOneBySomeField($value): ?Todoit
 //    {
 //        return $this->createQueryBuilder('t')
 //            ->andWhere('t.exampleField = :val')
