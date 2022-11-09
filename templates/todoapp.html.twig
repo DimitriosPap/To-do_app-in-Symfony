@@ -20,9 +20,10 @@
                 </tr>
             </thead>
             {% for tsk in tasks %}
+                {% set counter = ( counter | default(0) ) + 1 %}
             <tbody>
                 <tr>
-                    <td>{{ tsk.id }}</td>
+                    <td>{{ counter }}</td>
                     <td class="task">{{ tsk.task }}</td>
                     <td class="delete">
                         <a href={{path('delete_task', {'id':tsk.id})}}>X</a>
